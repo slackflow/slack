@@ -1,95 +1,202 @@
-# Slack API library [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](https://github.com/cleentfaar/slack/blob/master/LICENSE.md)
+# Slack
 
-Access your Slack Team's API through PHP objects.
+* [Download Slack](#quick-start-instructions)
+* [Setting Up Your Slack Workspace](#setting-up-your-slack-workspace)
+* [Mastering Channels and Conversations](#mastering-channels-and-conversations)
+* [Optimizing Your Slack Profile and Availability](#optimizing-your-slack-profile-and-availability)
 
-[![Build Status](https://img.shields.io/travis/cleentfaar/slack/master.svg?style=flat-square)](https://travis-ci.org/cleentfaar/slack)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/cleentfaar/slack.svg?style=flat-square)](https://scrutinizer-ci.com/g/cleentfaar/slack/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/cleentfaar/slack.svg?style=flat-square)](https://scrutinizer-ci.com/g/cleentfaar/slack)
-[![Latest Version](https://img.shields.io/github/release/cleentfaar/slack.svg?style=flat-square)](https://github.com/cleentfaar/slack/releases)
-[![Total Downloads](https://img.shields.io/packagist/dt/cleentfaar/slack.svg?style=flat-square)](https://packagist.org/packages/cleentfaar/slack)
+## Quick Start Instructions:
 
+2. Install the application and open it on your device.
 
-### Documentation
+3. Log in with your professional email credentials.
 
-- [Getting started](https://github.com/cleentfaar/slack/blob/master/src/CL/Slack/Resources/doc/getting-started.md) - Before you use this library, you need to generate a token or setup oAuth.
-- [Installation](https://github.com/cleentfaar/slack/blob/master/src/CL/Slack/Resources/doc/installation.md) - Information on installing this library through composer or as a git submodule.
-- [Usage](https://github.com/cleentfaar/slack/blob/master/src/CL/Slack/Resources/doc/usage.md) - A few simple examples on how to access the Slack API using this library
-- [API methods](https://github.com/cleentfaar/slack/blob/master/src/CL/Slack/Resources/doc/methods/index.md) - Detailed information on each of Slack's API methods and how to access them using this library's `Payload` classes.
-- [Events](https://github.com/cleentfaar/slack/blob/master/src/CL/Slack/Resources/doc/events.md) - Examples for listening to events fired by the `ApiClient`
+4. Use the sidebar to navigate: you'll find Channels on the left and conversation threads on the right.
 
+## Setting Up Your Slack Workspace
+
+In Slack, each team operates within a **workspace**, which functions as a centralized environment for communication, integrations, and shared tools.
+
+### Creating a Workspace
+
+1. Go to [Create a Slack workspace](*)
+
+2. Click on **Create a new workspace**
+
+3. Enter your work email address and complete the verification steps
+
+4. Choose a name for your workspace (e.g., "Acme Corp") and configure your initial channel
+
+### Inviting Members
+
+* Click your workspace name > *Invite people*
+
+* Send invitations via email or provide a public link (for open-access teams)
+
+### Managing Workspaces
+
+Admins within a workspace have the ability to:
+
+* Control who can set up channels or install apps
+
+* Limit posting permissions in the #general channel
+
+* Access usage metrics and activity reports
+
+**Pro Tip**: You're allowed to be part of several workspaces — click your profile image and select **Add another workspace**.
+
+## Mastering Channels and Conversations
+
+Channels are fundamental to Slack’s communication structure, allowing conversations to stay on-topic by grouping them by project, department, or theme.
+
+### Types of Channels
+
+* **Public Channels**: Open to all members of the workspace (e.g., #design-team)
+
+* **Private Channels**: Available only to invited users
+
+* **Shared Channels**: Enable collaboration with users from other organizations within a common channel
+
+### Channel Actions
+
+* **Create**: Hit the `+` next to Channels > Create a channel
+
+* **Join**: Use the channel browser or press `Ctrl+K` / `Cmd+K` to search
+
+* **Mute**: Type `/mute` or go to settings > Mute this channel
+
+* **Archive**: Navigate to settings > Additional options > Archive this channel
+
+### Threads
+
+Threads help maintain clarity and reduce clutter:
+
+* Use threaded replies to keep discussions organized
+
+* Check "Also send to #channel" to notify the main channel as well
+
+### Direct and Group Messaging
+
+* DMs: One-on-one private conversations
+
+* Group DMs: Private chats for up to nine participants
+
+## Voice, Video, and Screen Sharing
+
+Slack provides native and third-party tools for voice and video collaboration.
+
+### Native Calls
+
+* Initiate a call using the **phone** or **camera** icons in any DM
+
+* On premium plans, host group calls with as many as 15 users
 
 ### Features
-- Access all of Slack's API methods with dedicated payload classes (see [usage documentation](https://github.com/cleentfaar/slack/blob/master/src/CL/Slack/Resources/doc/usage.md))
-- Payloads and responses follow the same definitions as described in the [official documentation](https://api.slack.com) (with a few exceptions where I think it would make a better distinction).
-- Data between you and Slack is serialized using the [JMS Serializer](http://jmsyst.com/libs/serializer) package,
-allowing fully spec-ed PHP objects to be used for working with the API.
-- Code has been highly abstracted to support re-use in more specific implementations (see [SlackBundle](https://github.com/cleentfaar/CLSlackBundle))
 
+* Instantly present your screen
 
-### Further reading
+* Use the pencil icon to draw or highlight during screen sharing
 
-I've done my best to include links to the official documentation in the code where appropriate.
+* Invite others to join ongoing calls
 
-Still, you should really check out the [API documentation](https://api.slack.com/) of Slack yourself to get a better
-understanding of exactly what each API method does and what data it will return.
+### Using / Commands
 
-If you feel there is some part of this package that you would like to see documented in more detail, please don't hesitate
-to create an issue for it.
+* `/call` – starts a Slack-native voice or video call if supported
 
+* `/zoom` or `/meet` – opens a Zoom or Google Meet session
 
-### Contributing
+### Recording via Standuply
 
-Got a good idea for this project? Found a nasty bug that needs fixing? That's great!
-Before submitting your PR though, make sure it complies with the [contributing guide](https://github.com/cleentfaar/slack/blob/master/src/CL/Slack/Resources/doc/contributing.md) to
-speed up the merging of your code.
+Execute `/voice` or `/video` to capture a message. It gets uploaded to an unlisted YouTube link and is automatically posted in Slack.
 
+## Optimizing Your Slack Profile and Availability
 
-### Missing methods
+Your Slack profile helps coworkers learn more about you — including your role, status, and availability.
 
-The following methods have not yet been implemented, why not contribute and add some yourself?
-- files.delete*
-- pins.add
-- pins.list
-- pins.remove
-- reactions.add
-- reactions.get
-- reactions.list
-- reactions.remove
-- team.accessLogs
-- team.info
+### Setting Up Your Profile
 
-\* = issue/PR has been opened for this method
+* Click your name > *Profile & account* > Edit Profile
 
+* You can customize the following details:
 
-### Related packages
+  * Display name
+  * Role and team
+  * Status message (e.g., "Working remotely", "Out of office")
+  * Time zone
+  * Profile picture (recommended: 512x512 px)
 
-- [Slack CLI](https://github.com/cleentfaar/slack-cli) - CLI application for all of the Slack API methods.
-- [SlackBundle](https://github.com/cleentfaar/CLSlackBundle) - Symfony Bundle providing integration with this library package.
+### Status & Availability
 
+* Set your status manually or sync it via apps like Google Calendar through Zapier
 
-### Attributions
+* Use emojis to convey quick visual updates
 
-- The [Slack](https://slack.com/) staff, for making an awesome product and very clean API documentation.
+* Turn on Do Not Disturb to pause incoming notifications
 
-### FAQ
+**Pro Tip**: Use expiration timers so your status reverts after a defined period.
 
-###### Why am I getting a cURL 60 error when attempting to connect to the Slack API?
+## Using Slack Apps and Integrations Effectively
 
-Under the hood this library uses [Guzzle](https://github.com/guzzle/guzzle) to connect to the Slack API, and Guzzle's 
-default method for sending HTTP requests is cURL.
+Slack connects seamlessly with numerous tools to streamline workflows and improve team efficiency.
 
-The full error code is *CURLE_SSL_CACERT: Peer certificate cannot be authenticated with known CA certificates* and may 
-be due, especially on Windows or OS X, to [Guzzle not being able to find an up to date CA certificate bundle on the operating system](http://docs.guzzlephp.org/en/latest/faq.html#why-am-i-getting-an-ssl-verification-error).
+### Installing Apps
 
-To fix this you first create the Guzzle client manually using an alternative CA cert bundle, or [disabling peer verification](http://guzzle.readthedocs.org/en/latest/clients.html#verify) (not recommended for security reasons), and pass it to the API Client.
+1. Open the [Slack App Directory](*)
 
-```php
-$client = new \GuzzleHttp\Client();
-$client->setDefaultOption('verify', 'C:\Program Files (x86)\Git\bin\curl-ca-bundle.crt');
+2. Pick a category (e.g., DevOps, Productivity)
 
-// continue as normal, using the client above
+3. Select Install and go through the authorization steps
 
-$apiClient =  new ApiClient('api-token-here', $client);
-```
+### Recommended Apps
 
-If you get a different error code you can look at the [list of cURL error codes](http://curl.haxx.se/libcurl/c/libcurl-errors.html), or consult the [Guzzle documentation](http://docs.guzzlephp.org/en/latest/) directly.
+* **Trello, Asana** – For tracking tasks and projects
+* **Google Drive, Dropbox** – For file sharing and storage
+* **Zoom, Daily** – For video calls and meetings
+* **Standuply** – Ideal for async standups, polls, and reports
+
+### Custom Integrations
+
+* Develop bots using the [Slack API](*)
+
+* Set up incoming and outgoing webhooks
+
+* Define custom slash commands like `/leads`, `/weather`, or `/standup`
+
+**Admin Tip**: Restrict app usage to approved tools through *App Management* settings.
+
+## Advanced Features, Automation, and Pro Tips
+
+Maximize Slack's potential with advanced features and automation tools for enhanced productivity.
+
+### Search Like a Pro
+
+* `from:@name` – locate messages from a specific user
+
+* `in:#channel` – search within a particular channel
+
+* `has:pin` – filter only pinned items
+
+* `before:2024-01-01` – locate messages from before a specific date
+
+### Message Formatting
+
+* Bold: `*text*`
+* Italics: `_text_`
+* Code: `` `code` ``
+* Blockquote: `>` for single-line, `>>>` for multi-line
+* Lists: `* item` or `1. item`
+
+### Keyboard Shortcuts
+
+* `Ctrl/Cmd + K` – Switch between channels or DMs quickly
+* `Esc` – Mark current channel as read
+* `Ctrl/Cmd + Shift + A` – Show all unread messages
+* `Ctrl/Cmd + /` – View all available keyboard shortcuts
+
+### Productivity Boosters
+
+* Use your own DM space as a scratchpad or notebook
+* Make a #to-do channel and track tasks in threads
+* Represent task progress with emojis
+* Set up keyword notifications via Preferences > Notifications > My Keywords
+* Compose formatted notes or documents using *Posts*
